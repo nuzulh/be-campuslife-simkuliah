@@ -97,6 +97,6 @@ exports.handler = async function (req) {
   }
   return {
     statusCode: 401,
-    body: JSON.stringify({ msg: 'error' }),
+    body: JSON.stringify({ msg: "bad request" }),
   };
 };
