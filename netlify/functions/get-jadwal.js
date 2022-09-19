@@ -87,10 +87,16 @@ const main = async (npmReq, passwordReq) => {
 };
 
 exports.handler = async function (req) {
-  const { npm, password } = JSON.parse(req.body);
-  const result = await main(npm, password);
+  if (req.body) {
+    const { npm, password } = JSON.parse(req.body);
+    const result = await main(npm, password);
+    return {
+      statusCode: 200,
+      body: JSON.stringify({ npm, result }),
+    };
+  }
   return {
-    statusCode: 200,
-    body: JSON.stringify({ npm, result }),
+    statusCode: 401,
+    body: JSON.stringify({ msg: 'error' }),
   };
 };
