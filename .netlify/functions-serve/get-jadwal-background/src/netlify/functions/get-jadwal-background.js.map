@@ -1,0 +1,8 @@
+{
+  "version": 3,
+  "sources": ["netlify/functions/get-jadwal-background.js"],
+  "sourceRoot": "C:/Users/ASUSTUF/AppData/Local/Temp/tmp-13384-8mTHWK2ZsyFR",
+  "sourcesContent": ["exports.handler = async function (event, context) {\n  const { npm, password } = JSON.parse(event.body);\n  return {\n    statusCode: 200,\n    body: JSON.stringify({ npm, password }),\n  };\n};\n"],
+  "mappings": ";AAAA,QAAQ,UAAU,eAAgB,OAAO,SAAS;AAChD,QAAM,EAAE,KAAK,aAAa,KAAK,MAAM,MAAM;AAC3C,SAAO;AAAA,IACL,YAAY;AAAA,IACZ,MAAM,KAAK,UAAU,EAAE,KAAK;AAAA;AAAA;",
+  "names": []
+}

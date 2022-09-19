@@ -1,0 +1,14 @@
+{
+  "name": "be-simkuliah-schedule",
+  "version": "1.0.0",
+  "description": "Backend for Simkuliah USK get jadwal functions",
+  "engines": {
+    "npm": "6.14.10",
+    "node": "14.15.4"
+  },
+  "author": "nuzulh <nuzulhikam0@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "node-fetch": "^2.6.7"
+  }
+}
