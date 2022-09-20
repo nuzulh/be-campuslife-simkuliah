@@ -76,7 +76,12 @@ const main = async (npmReq, passwordReq) => {
     return {
       success: true,
       name,
-      jadwal,
+      mon: jadwal.filter((i) => i.hari === "Senin"),
+      tue: jadwal.filter((i) => i.hari === "Selasa"),
+      wed: jadwal.filter((i) => i.hari === "Rabu"),
+      thu: jadwal.filter((i) => i.hari === "Kamis"),
+      fri: jadwal.filter((i) => i.hari === "Jumat"),
+      sat: jadwal.filter((i) => i.hari === "Sabtu"),
     };
   } catch (e) {
     return {
