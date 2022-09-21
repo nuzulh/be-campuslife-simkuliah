@@ -55,7 +55,7 @@ const main = async (npmReq, passwordReq) => {
               dataMK.push({
                 mk: matkul,
                 hari: hari,
-                jam: jam,
+                jam: jam.replace(".", ":"),
               });
             }
           });
