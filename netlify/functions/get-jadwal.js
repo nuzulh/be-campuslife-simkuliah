@@ -46,14 +46,30 @@ const main = async (npmReq, passwordReq) => {
           data.split("</tr>").forEach((mk) => {
             const temp = mk.split("</td>").toString();
             let matkul = temp.split("<td>")[2];
+            let dosen = temp.split('<span style="font-size: 10pt;">Nama : ')[1];
+            let nip = temp.split('<span style="font-size: 10pt;">NIP : ')[1];
+            let hp = temp.split(
+              '<span style="font-size: 10pt;">Nomor HP : '
+            )[1];
+            let ruang = temp.split(
+              '<span style="font-size: 10pt;">Ruang : '
+            )[1];
             let hari = temp.split('<span style="font-size: 10pt;">')[4];
             let jam = temp.split('<span style="font-size: 10pt;">')[6];
             if (matkul !== undefined) {
               matkul = matkul.split(",")[0].replace("<br>", " ");
+              dosen = dosen.split("<br></span>")[0];
+              nip = nip.split("<br></span>")[0];
+              hp = hp.split("<br></span>")[0];
+              ruang = ruang.split("<br></span>")[0];
               hari = hari.split(",")[1].split(":")[1].split(",")[0].trim();
               jam = jam.split("&nbsp")[0].split(":")[1].trim().split(" - ")[0];
               dataMK.push({
                 mk: matkul,
+                dosen: dosen,
+                nip: nip,
+                hp: hp,
+                ruang: ruang,
                 hari: hari,
                 jam: jam.replace(".", ":"),
               });
