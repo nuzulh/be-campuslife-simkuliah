@@ -2,7 +2,7 @@ const fetch = require("node-fetch");
 process.env["NODE_TLS_REJECT_UNAUTHORIZED"] = 0;
 
 const main = async (npmReq, passwordReq) => {
-  const baseUrl = "https://simkuliah.unsyiah.ac.id/index.php";
+  const baseUrl = "https://simkuliah.unsyiah.ac.id";
 
   const getCookie = () =>
     new Promise((resolve, reject) => {
@@ -14,7 +14,7 @@ const main = async (npmReq, passwordReq) => {
 
   const login = (npm, passwd, cookie) =>
     new Promise((resolve, reject) => {
-      fetch(`${baseUrl}/login`, {
+      fetch(`${baseUrl}`, {
         method: "POST",
         body: `username=${npm}&password=${passwd}`,
         headers: {
